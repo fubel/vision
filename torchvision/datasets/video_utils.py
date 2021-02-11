@@ -327,7 +327,7 @@ class VideoClips(object):
         if backend == "pyav":
             start_pts = clip_pts[0].item()
             end_pts = clip_pts[-1].item()
-            video, audio, info = read_video(video_path, start_pts, end_pts)
+            video, audio, info = read_video(video_path, start_pts, end_pts, pts_unit = 'sec')
         else:
             info = _probe_video_from_file(video_path)
             video_fps = info.video_fps
